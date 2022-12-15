@@ -1,17 +1,15 @@
 {
-  "name": "ts-study",
+  "name": "temptest",
   "version": "1.0.0",
-  "description": "study Typescript",
-  "main": "src/index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "ts-node src",
-    "build": "tsc && node dist"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Bam",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "express": "^4.18.2"
   }
 }
