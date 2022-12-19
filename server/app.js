@@ -1,10 +1,10 @@
-const express = require("express"),
-  app = express();
-(http = require("http").createServer(app)), (port = 8001);
+import express from 'express';
+import Router from './controller/index.js';
 
-const routes = require("./routes/"); // index.js 는 / 와 같으므로 생략 가능
-app.use(routes); // use 는 경로에 대한 확장성을 의미한다.
+const app = express();
+app.use('/api', Router); // use 는 경로에 대한 확장성을 의미한다.
+const PORT = process.env.PORT || 8080;
 
-http.listen(port, function () {
-  console.log(`http://localhost:${port}`);
+app.listen(PORT, async () => {
+  console.log(`✅ Express Server Listening on : http://localhost:${PORT}`);
 });
