@@ -2,11 +2,14 @@
   "compilerOptions": {
     "allowJs": true,
     "target": "ES5",
-    "module": "ES6",
+    "module": "esnext", 
     "outDir": "./dist",
     "moduleResolution": "Node",
     "lib": ["ES2015", "DOM", "DOM.Iterable"],
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
   },
   "include": ["./**/*"],
   "exclude": ["node_modules", "dist"]
