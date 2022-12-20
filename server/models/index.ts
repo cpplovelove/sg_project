@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import config from '../config/db-config.json' assert { type: "json" };
-;
+import User from './user.js';
+import Purpose from './purpose.js';
 
 
 
@@ -24,6 +25,8 @@ const sequelize = new Sequelize(
 );
 
 sequelize.addModels([
+    Purpose,
+    User
 ]);
 const db = { sequelize: sequelize, Sequelize };
 sequelize.sync();

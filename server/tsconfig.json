@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "target": "ES5",
+    "target": "es6", 
     "module": "esnext", 
     "outDir": "./dist",
     "moduleResolution": "Node",
