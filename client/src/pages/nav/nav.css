@@ -3,11 +3,12 @@
     --background-color: #f0f4f5;
     --accent-color:#d49466;
     display: block;
+    font-family: 'inter';
 }
 
 body {
     margin: 0px;
-    font-family: 'Open sans';
+    font-family: 'inter';
 }
 
 a {
@@ -20,7 +21,6 @@ a {
     justify-content: space-between;
     align-items: center;
     background:#f0f4f5;
-    /* padding: 8px 12px; */
 }
 
 .navbar__logo {
@@ -44,6 +44,7 @@ a {
     border-radius: 50px;
     background-color: #F1D064;
     font-size: 20px;
+    font-family: "inter";
     font-weight: 750;
     color: #38170F;
 }

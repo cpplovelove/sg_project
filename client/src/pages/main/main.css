@@ -1,7 +1,63 @@
 
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw;
+}
+
+button{
+    background-color: #F2D064;
+    border: none;
+    border-radius: 50px;
+    color: black;
+    padding: 7px 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 2px;
+    cursor: pointer;
+    font-family: "inter";
+    font-weight: 750;
+    font-size: 20px;
+}
+
+button:hover{
+    background: #d49466;
+}
+
 img{
     left: 25%;
     position:fixed;
     bottom:0;
     width:50%;
 }
+
+@font-face {
+    font-family: "Jalnan";
+    src: url("../../assets/fonts/Jalnan.ttf");
+
+}
+
+@font-face {
+    font-family: "inter";
+    src: url("../../assets/fonts/Inter-SemiBold.ttf");
+}
+
+h1{
+    font-family: "Jalnan";
+    font-size: 40px;
+    color: white;
+}
+
+p{
+    text-align: center;
+    color: white;
+    font-family: "inter";
+    font-weight: 600;
+    font-size: 20px;
+}
+
