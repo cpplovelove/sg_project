@@ -35,6 +35,9 @@ class User extends Model {
     @Column({ type: DataType.BOOLEAN })
     isApproved: boolean;
 
+    @Column({ type: DataType.INTEGER })
+    authNumber: number;
+
     @HasMany(() => Purpose)
     ownPurposes: Purpose[];
 
