@@ -12,17 +12,17 @@ function WishPage() {
   }
 
   return (
-    <>
+    <div className="wrapper">
       <Navigator></Navigator>
-      <div className="content">
-        <h1>운 수 대 통</h1>
-        <p>올해 목표를 작성해봐요!</p>
+      <div className="content-wrapper">
+        <div className="title">운 수 대 통</div>
+        <div className="content">데이터가 추가 될 예정입니다</div>
+        <button>+</button>
+        <button>d o n e</button>
       </div>
-      <div className="image">
-        <img src={SunnyImage} alt="sunny" />
-      </div>
+      {/* <div className="image"><img src={SunnyImage} alt="sunny" /></div> */}
       <WishModal></WishModal>
-    </>
+    </div>
   );
 }
 
