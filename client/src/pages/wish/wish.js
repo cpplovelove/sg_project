@@ -1,5 +1,4 @@
 import Navigator from "../nav/nav";
-import SunnyImage from "../../assets/sunny.png";
 import WishModal from "./wish-modal";
 import { useState } from "react";
 import "./wish.css";
