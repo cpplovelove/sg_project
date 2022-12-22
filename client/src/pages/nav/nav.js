@@ -6,14 +6,14 @@ function Navigator() {
       <nav class="navbar">
         <div class="navbar__logo">
           <i class="fab fa-accusoft"></i>
-          <a href="">
+          <a href="/">
             <strong>JIONIE</strong>
           </a>
         </div>
 
         <ul class="navbar__menu">
           <li>
-            <a href="">소원 빌러 가기</a>
+            <a href="/wish">소원 빌러 가기</a>
           </li>
         </ul>
 

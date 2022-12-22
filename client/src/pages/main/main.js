@@ -21,7 +21,9 @@ function MainPage() {
     <>
       <Navigator></Navigator>
       <div className="content">
-        <h1>소 원 을 말 해 봐</h1>
+        <a href="/board">
+          <h1>소 원 을 말 해 봐</h1>
+        </a>
         <p>
           연말 연초 목표를 세우느라 바쁜 J형 당신을 위한 서비스 동기가 없으면
           <br></br>
