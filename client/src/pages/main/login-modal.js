@@ -3,9 +3,8 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import { UserController } from "../../controller/user-controller";
 
 const style = {
   position: "absolute",
@@ -23,13 +22,26 @@ const style = {
 
 export default function LoginModal(props) {
   let { handleOpen, open } = props;
+  const [userEmail, setEmail] = React.useState();
+  const [userPass, setPass] = React.useState();
 
   const [isOpen, setOpen] = React.useState(false);
+
+  async function login() {
+    const result = await UserController.login(userEmail, userPass);
+    if (result) {
+      alert("로그인에 성공했습니다.");
+      handleClose();
+    } else alert("이메일과 비밀번호를 다시 한번 확인해주세요.");
+  }
 
   React.useEffect(() => {
     setOpen(open);
   }, [open]);
+
   const handleClose = () => {
+    setEmail("");
+    setPass("");
     setOpen(false);
     handleOpen();
   };
@@ -56,14 +68,22 @@ export default function LoginModal(props) {
               label="이메일 주소*"
               variant="outlined"
               style={{ width: "70%", marginBottom: "10px", marginTop: "2%" }}
+              onChange={(newValue) => setEmail(newValue.target.value)}
             />
             <TextField
               id="userPass"
               label="비밀번호*"
               variant="outlined"
               style={{ width: "70%", marginBottom: "3%" }}
+              onChange={(newValue) => setPass(newValue.target.value)}
             />
-            <button> 로그인 </button>
+            <button
+              onClick={() => {
+                login();
+              }}
+            >
+              로그인
+            </button>
           </Box>
         </Fade>
       </Modal>
