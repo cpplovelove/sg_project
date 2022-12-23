@@ -16,7 +16,6 @@ const PurposeController = {
     },
     async getPurposesByPage(req: any, res: any) {
         try {
-            console.log('emfdjdha')
             const page = req.params.page;
             const dataList = await PurposeService.getPurposesByPage(page);
             res.status(200).json(dataList);
