@@ -7,7 +7,7 @@ const UserController = {
     let { userEmail, userPass, userName } = req.body;
     userPass = await bcrypt.hash(userPass, 10);
 
-    const user: any = await UserService.create(userEmail, userPass, userName);
+    const user: any = await UserService.join(userEmail, userPass, userName);
     if (!user) res.status(400).json({ message: 'User creation failed' });
     res.status(200).json(user);
   },

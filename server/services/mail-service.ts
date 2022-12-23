@@ -1,5 +1,9 @@
 import nodemailer from 'nodemailer';
 import mailConfig from '../config/mail-config.json'assert { type: "json" };
+import ejs from 'ejs'
+import path from 'path';
+const __dirname = path.resolve();
+
 
 
 const MailService = {
@@ -16,25 +20,30 @@ const MailService = {
             }
         });
 
-        var mailOptions = {
-            from: mailConfig.user,
-            to: toEmail,
-            subject: "[소원을 말해봐] 인증 이메일 입니다",
-            text: authNumber + "인증하셈"
-        };
-
-        transporter.sendMail(mailOptions, function (err, info) {
+        ejs.renderFile(__dirname + '/services/template.ejs', { authNumber }, (err, data) => {
             if (err) {
-                console.log(err);
                 throw err;
             } else {
-                console.log('Email sent: ' + info.response);
+                var mailOptions = {
+                    from: mailConfig.user,
+                    to: toEmail,
+                    subject: "[소원을 말해봐] 인증 이메일 입니다",
+                    text: "<a href>" + mailConfig.host + mailConfig.user + "?" + authNumber + "</a>",
+                    html: data,
+                };
+
+                transporter.sendMail(mailOptions, function (err, info) {
+                    if (err) {
+                        console.log(err);
+                        throw err;
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
             }
         });
-
     }
 }
-
 
 export default MailService;
 
