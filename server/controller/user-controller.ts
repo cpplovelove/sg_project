@@ -27,8 +27,24 @@ const UserController = {
       const checkUser = await UserService.login(userEmail, userPass);
 
       if (!checkUser) res.status(400).json({ message: 'User login failed' });
-      else res.status(200).json({ message: 'User login success' });
+      else {
+        req.session.userEmail = userEmail;
+        req.session.is_logined = true;
+        res.status(200).json({ message: 'User login success' });
+      }
     } catch (err) { throw err; }
+  },
+  async logout(req: any, res: any) {
+    req.session.destroy();
+    res.clearCookie('sid')
+    res.send('logout')
+  },
+  async loginCheck(req: any, res: any) {
+    console.log(req.session)
+    if (req.session.is_logined)
+      return res.json({ message: 'user exist' });
+    else
+      return res.json({ message: 'user not found' });
   },
   async approve(req: any, res: any) {
     try {
@@ -36,7 +52,11 @@ const UserController = {
 
       const isApproved: Boolean = await UserService.approve(userEmail, authNumber);
       if (!isApproved) res.status(400).json({ message: 'user approve failed' });
-      else res.status(200).send({ message: 'User approve success' })
+      else {
+        req.session.userEmail = userEmail;
+        req.session.is_logined = true;
+        res.status(200).send({ message: 'User approve success' })
+      }
     } catch (err) { throw err; }
   }
 };

@@ -6,6 +6,8 @@ const Router = express.Router();
 
 //User Controller
 Router.get('/users', UserController.getUsers);
+Router.get('/logout', UserController.logout);
+Router.get('/isLogged', UserController.loginCheck);
 Router.post('/user/join', UserController.join);
 Router.post('/user/login', UserController.login);
 Router.post('/user/approve', UserController.approve);
