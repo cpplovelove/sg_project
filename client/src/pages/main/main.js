@@ -4,6 +4,7 @@ import { useState } from "react";
 import JoinModal from "./join-modal";
 import "./main.css";
 import LoginModal from "./login-modal";
+import { UserController } from "../../controller/user-controller";
 
 function MainPage() {
   const [joinOpen, setJoinOpen] = useState(false);
@@ -20,6 +21,13 @@ function MainPage() {
   return (
     <>
       <Navigator></Navigator>
+      <button
+        onClick={() => {
+          UserController.isLogged();
+        }}
+      >
+        tepm
+      </button>
       <div className="content">
         <a href="/board">
           <h1>소 원 을 말 해 봐</h1>
