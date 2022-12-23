@@ -41,10 +41,13 @@ const UserController = {
   },
   async loginCheck(req: any, res: any) {
     console.log(req.session)
-    if (req.session.is_logined)
-      return res.json({ message: 'user exist' });
-    else
-      return res.json({ message: 'user not found' });
+    if (req.session.is_logined) {
+      console.log('user exist')
+      res.status(200).json({ isLogged: true });
+    } else {
+      console.log('user not found')
+      res.status(200).json({ isLogged: false });
+    }
   },
   async approve(req: any, res: any) {
     try {

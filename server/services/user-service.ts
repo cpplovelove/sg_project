@@ -35,7 +35,7 @@ const UserService = {
                     }
                 }
             });
-        }, 60 * 1000);
+        }, 10 * 60 * 1000);
 
         return user;
     },
