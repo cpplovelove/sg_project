@@ -3,6 +3,16 @@ import MailService from './mail-service.js';
 import bcrypt from 'bcrypt';
 
 const UserService = {
+    async getUserList() {
+        let userList = {};
+        await User.findAll({
+            attributes: ['userEmail', 'userName', 'isApproved'],
+        }).then(result => {
+            userList = result;
+
+        }).catch(err => { console.log(err); return false })
+        return userList;
+    },
     async create(userEmail: string, userPass: string, userName: string, authNumber: Number) {
         const user: User = new User({ userEmail, userPass, userName, authNumber });
         return await user.save();

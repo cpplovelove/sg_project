@@ -2,6 +2,14 @@ import UserService from "../services/user-service.js";
 import bcrypt from 'bcrypt'
 
 const UserController = {
+  async getUsers(req: any, res: any) {
+    try {
+      const userList = await UserService.getUserList();
+      console.log('-----')
+      console.log(userList)
+      res.status(200).json(userList);
+    } catch (err) { throw err; }
+  },
   async join(req: any, res: any) {
     //이미 가입된 유저인 지 확인 필요 & 토큰 발급 필요
     try {
