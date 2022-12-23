@@ -9,7 +9,6 @@ const UserService = {
             attributes: ['userEmail', 'userName', 'isApproved'],
         }).then(result => {
             userList = result;
-
         }).catch(err => { console.log(err); return false })
         return userList;
     },
