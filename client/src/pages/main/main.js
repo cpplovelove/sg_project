@@ -21,13 +21,6 @@ function MainPage() {
   return (
     <>
       <Navigator></Navigator>
-      <button
-        onClick={() => {
-          UserController.isLogged();
-        }}
-      >
-        tepm
-      </button>
       <div className="content">
         <a href="/board">
           <h1>소 원 을 말 해 봐</h1>
