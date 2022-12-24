@@ -20,4 +20,22 @@ export class PurposeController {
       throw err;
     }
   }
+
+  static async getPurposesByUserId(userId) {
+    try {
+      const purposeList = await PurposeService.getPurposesByUserId(userId);
+      return purposeList;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async createPurposes(userEmail, purposes) {
+    try {
+      const status = await PurposeService.createPurposes(userEmail, purposes);
+      return status;
+    } catch (err) {
+      throw err;
+    }
+  }
 }

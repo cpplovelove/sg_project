@@ -17,4 +17,22 @@ export class PurposeService {
     });
     return purposes;
   }
+
+  static async getPurposesByUserId(userId) {
+    let purposes;
+    await instance.get("/purposes/page/" + userId).then((res) => {
+      purposes = res.data;
+    });
+    return purposes;
+  }
+
+  static async createPurposes(userEmail, purposes) {
+    let status;
+    await instance
+      .get("/purposes/page/", { userEmail, purposes })
+      .then((res) => {
+        status = res.status;
+      });
+    return status;
+  }
 }
