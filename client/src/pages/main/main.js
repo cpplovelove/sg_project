@@ -4,6 +4,7 @@ import { useState } from "react";
 import JoinModal from "./join-modal";
 import "./main.css";
 import LoginModal from "./login-modal";
+import { UserController } from "../../controller/user-controller";
 
 function MainPage() {
   const [joinOpen, setJoinOpen] = useState(false);
