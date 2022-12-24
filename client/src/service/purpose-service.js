@@ -10,20 +10,11 @@ export class PurposeService {
     return purposes;
   }
 
-  static test() {
-    return new Promise((resolve, reject) => {
-      instance.get("/purposes/").then((res) => {
-        if (!res.data) reject(new Error(500));
-        resolve(res.data);
-      });
-    });
-  }
-
   static async getPurposesByPage(pageNo) {
-    await instance
-      .get("/purposes/page", { params: { page: pageNo } })
-      .then((res) => {
-        return res.data;
-      });
+    let purposes;
+    await instance.get("/purposes/page/" + pageNo).then((res) => {
+      purposes = res.data;
+    });
+    return purposes;
   }
 }

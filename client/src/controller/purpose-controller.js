@@ -20,8 +20,4 @@ export class PurposeController {
       throw err;
     }
   }
-  static async test() {
-    const resJson = PurposeService.test();
-    return resJson;
-  }
 }

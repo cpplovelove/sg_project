@@ -66,4 +66,14 @@ p{
     font-weight: 600;
     font-size: 20px;
 }
+.index_no {
+  margin: 10px;
+  font-weight: 200;
+  color: black;
+  display: inline;
+  text-decoration: none;
+}
+.index_no :hover{
+    color: #d49466;
+}
 
