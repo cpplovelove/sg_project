@@ -8,7 +8,7 @@
     width: 100vw;
 }
 
-button{
+.done{
     background-color: #F2D064;
     border: none;
     border-radius: 50px;
@@ -47,10 +47,48 @@ img{
     src: url("../../assets/fonts/Inter-SemiBold.ttf");
 }
 
-h1{
+.title{
     font-family: "Jalnan";
     font-size: 40px;
-    color: white;
+    color: black;
+    background-color: #F5BF62;
+    border-radius: 10px;
+    padding: 1% 10%;
+    width: 800px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.typingBar{
+    background-color: white;
+    padding: 1% 10%;
+    border-radius: 10px;
+    width: 700px;
+    text-align: center;
+    /* margin-right: 100px; */
+}
+
+.plus{
+    background-color: white;
+    padding: 6% 10%;
+    border-radius: 10px;
+    width: 110px;
+    text-align: center;
+    margin: 0 10%;
+}
+
+.wishList{
+    background-color: white;
+    padding: 2% 10%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    width: 800px;
+    text-align: center;
+}
+
+
+table{
+    width: 800px;
 }
 
 h2{
@@ -66,3 +104,35 @@ p{
     font-size: 20px;
 }
 
+
+
+.input__section form {
+    margin: 1% 0;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 850px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #fbe7c6;
+  padding: 0px 30px;
+  margin-right: 7px;
+}
+
+*:focus {
+  outline: none;
+}
+
+.input__button {
+      height: 50px;
+
+  background-color: #F5BF62;
+  font-size: 30px;
+  margin-left: 5px;
+  color: white;
+  border-radius: 10px;
+}
