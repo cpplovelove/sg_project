@@ -4,10 +4,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50vh;
     width: 100vw;
-}
+    height: auto;
+    }
 
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 22vh;
+    bottom: 100px;
+    width: 100vw;
+    margin-top: 2%;
+}
 .done{
     background-color: #F2D064;
     border: none;
@@ -56,8 +66,7 @@ img{
     padding: 1% 10%;
     width: 800px;
     text-align: center;
-    margin-top: 5%;
-}
+ }
 
 .typingBar{
     background-color: white;
@@ -65,7 +74,6 @@ img{
     border-radius: 10px;
     width: 700px;
     text-align: center;
-    /* margin-right: 100px; */
 }
 
 .plus{
@@ -74,7 +82,7 @@ img{
     border-radius: 10px;
     width: 110px;
     text-align: center;
-    margin: 0 10%;
+    /* margin: 0 10%; */
 }
 
 .wishList{
@@ -84,6 +92,12 @@ img{
     border-radius: 10px;
     width: 800px;
     text-align: center;
+    font-size: 22px;
+    font-family: inter;
+}
+
+.wish{
+    margin:5px 0;
 }
 
 
@@ -107,7 +121,7 @@ p{
 
 
 .input__section form {
-    margin: 1% 0;
+margin: 1% 0;
   border-radius: 10px;
   align-items: center;
   display: flex;
@@ -120,7 +134,7 @@ p{
   border-radius: 10px;
   border: 1px solid #fbe7c6;
   padding: 0px 30px;
-  margin-right: 7px;
+  margin-right: 4px;
 }
 
 *:focus {
@@ -128,8 +142,7 @@ p{
 }
 
 .input__button {
-      height: 50px;
-
+height: 50px;
   background-color: #F5BF62;
   font-size: 30px;
   margin-left: 5px;
