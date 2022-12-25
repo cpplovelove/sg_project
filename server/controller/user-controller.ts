@@ -27,13 +27,13 @@ const UserController = {
     try {
       const { userEmail, userPass } = req.body;
 
-      const checkUser = await UserService.login(userEmail, userPass);
+      const userInfo = await UserService.login(userEmail, userPass);
 
-      if (!checkUser) res.status(400).json({ message: 'User login failed' });
+      if (userInfo == false) res.status(400).json({ message: 'User login failed' });
       else {
         req.session.userEmail = userEmail;
         req.session.is_logined = true;
-        res.status(200).json({ message: 'User login success' });
+        res.status(200).json(userInfo);
       }
     } catch (err) { throw err; }
   },

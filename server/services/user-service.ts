@@ -45,7 +45,7 @@ const UserService = {
 
         const isEqual = await bcrypt.compare(userPass, userInfo.userPass)
         if (!isEqual) return false
-        else return isEqual
+        else return userInfo
     },
     async approve(userEmail: String, authNumber: number) {
         const userInfo = await this.findUserByEmail(userEmail);
@@ -58,7 +58,9 @@ const UserService = {
         else return false;
     },
     async findUserByEmail(userEmail: String) {
-        const user = await User.findOne({ where: { userEmail } });
+        const user = await User.findOne({
+            where: { userEmail }
+        });
         if (user) return user;
         else return false;
     }
