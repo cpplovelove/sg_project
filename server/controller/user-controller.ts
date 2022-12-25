@@ -31,28 +31,14 @@ const UserController = {
 
       if (userInfo == false) res.status(400).json({ message: 'User login failed' });
       else {
-        req.session.userEmail = userEmail;
-        req.session.is_logined = true;
         res.status(200).json(userInfo);
       }
     } catch (err) { throw err; }
   },
   async logout(req: any, res: any) {
     console.log(req.method, req.path)
-    req.session.destroy();
     res.clearCookie('sid')
     res.send('logout')
-  },
-  async loginCheck(req: any, res: any) {
-    console.log(req.method, req.path)
-    console.log(req.session)
-    if (req.session.is_logined) {
-      console.log('user exist')
-      res.status(200).json({ isLogged: true });
-    } else {
-      console.log('user not found')
-      res.status(200).json({ isLogged: false });
-    }
   },
   async approve(req: any, res: any) {
     console.log(req.method, req.path)
@@ -62,8 +48,6 @@ const UserController = {
       const isApproved: Boolean = await UserService.approve(userEmail, authNumber);
       if (!isApproved) res.status(400).json({ message: 'user approve failed' });
       else {
-        req.session.userEmail = userEmail;
-        req.session.is_logined = true;
         res.status(200).send({ message: 'User approve success' })
       }
     } catch (err) { throw err; }
