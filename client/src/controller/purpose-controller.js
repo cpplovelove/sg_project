@@ -30,9 +30,16 @@ export class PurposeController {
     }
   }
 
-  static async createPurposes(userEmail, purposes) {
+  static async createPurposes(userId, purposes) {
     try {
-      const status = await PurposeService.createPurposes(userEmail, purposes);
+      let purposeList = [];
+      for (let i = 0; i < purposes.length; i++) {
+        purposeList.push({ content: purposes[i] });
+      }
+
+      const reqJson = { userId, purposes: purposeList };
+      const status = await PurposeService.createPurposes(reqJson);
+      if (status === 200) return true;
       return status;
     } catch (err) {
       throw err;

@@ -19,7 +19,7 @@ const style = {
 };
 
 export default function WishModal() {
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = React.useState(true);
 
   const handleClose = () => {
     setOpen(false);
@@ -57,9 +57,17 @@ export default function WishModal() {
             <br />
             <br />
             내가 적은 목표와 소원은 메인화면의 게시판을 통해서 공유돼요! <br />
-            공유를 원하지 않는 경우에는 꼭 done을 누를 때 옵션을 체크해주세요!{" "}
+            {/* 공유를 원하지 않는 경우에는 꼭 done을 누를 때 옵션을 체크해주세요!{" "} */}
             <br />
-            <button style={{ marginTop: "4%" }}> d o n e </button>
+            <button
+              style={{ marginTop: "4%" }}
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              {" "}
+              d o n e{" "}
+            </button>
           </Box>
         </Fade>
       </Modal>

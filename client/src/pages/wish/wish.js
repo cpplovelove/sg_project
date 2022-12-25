@@ -1,15 +1,23 @@
 import Navigator from "../nav/nav";
 import WishModal from "./wish-modal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./wish.css";
+import { PurposeController } from "../../controller/purpose-controller";
 
 function WishPage() {
-  const [open, setOpen] = useState(true);
   const [wish, setWish] = useState();
   const [isExist, setIsExist] = useState(localStorage.getItem("wish") != null);
 
-  function handleOpen() {
-    setOpen(!open);
+  function createPurposes() {
+    const resultStatus = PurposeController.createPurposes(
+      1,
+      localStorage.getItem("wish").split(",")
+    );
+    if (resultStatus) {
+      alert("목표 등록 성공!");
+    } else {
+      alert("등록 실패");
+    }
   }
 
   const onChange = (e) => {
@@ -87,7 +95,13 @@ function WishPage() {
               </button>
             </td>
             <td>
-              <button>d o n e</button>
+              <button
+                onClick={() => {
+                  createPurposes();
+                }}
+              >
+                d o n e
+              </button>
             </td>
           </tr>
         </table>
