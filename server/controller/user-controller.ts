@@ -29,7 +29,8 @@ const UserController = {
 
       const userInfo = await UserService.login(userEmail, userPass);
 
-      if (userInfo == false) res.status(400).json({ message: 'User login failed' });
+      if (userInfo == false) res.status(200).json({ message: 'User login failed' });
+      if (userInfo.isApproved == false) res.status(200).json({ message: 'User is not approved' });
       else {
         res.status(200).json(userInfo);
       }
