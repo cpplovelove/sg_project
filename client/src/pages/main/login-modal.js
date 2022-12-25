@@ -29,6 +29,13 @@ export default function LoginModal(props) {
 
   async function login() {
     const result = await UserController.login(userEmail, userPass);
+    if (typeof result === "string") {
+      if (result == "User login failed")
+        alert("이메일과 비밀번호를 다시 한번 확인해주세요.");
+      else alert("이메일 인증을 완료해주세요 ");
+      handleClose();
+      return false;
+    }
     if (result) {
       alert("로그인에 성공했습니다.");
       handleClose();

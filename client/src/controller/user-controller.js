@@ -18,6 +18,8 @@ export class UserController {
     try {
       const resJson = await UserService.login(userEmail, userPass);
       if (resJson.status === 200) {
+        if (resJson.data.message) return resJson.data.message;
+
         const { id, userEmail, userName } = resJson.data;
         const cookieData = { id, userEmail, userName, isLogged: true };
         const expires = new Date();
