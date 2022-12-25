@@ -25,19 +25,23 @@
     • 유저 관리 페이지 
 
 프로젝트를 진행하면서 초반에 설계한 결과물입니다.<br>
+- 서비스 아키텍처
+
+<div align="center">
+<img src="https://ifh.cc/g/KWFhCM.png" width="400">
+</div>
+
+- 프로토 타입<br>
     <br>
     ![prototype](https://user-images.githubusercontent.com/57889360/209469629-65d83c18-f116-4ad1-bca4-979817af5dc7.png)
     [프로토타입 바로가기](https://www.figma.com/file/SwfAChJkat0hpaQeQIqK8D/smilegate-project?node-id=2%3A322&t=SAAYZfVux2GkA2PU-0)
     <br>
-    서비스 아키텍처
-    ![서비스 아키텍처](https://user-images.githubusercontent.com/57889360/209469665-226d9d80-f642-4690-9a62-cdd1e5fd1f7b.png)
-
-
+    
 
 ### 구현 결과물
 <div align="center">
 
-![화면_기록_2022-12-25_오후_8_54_39_AdobeExpress_AdobeExpress (1)](https://user-images.githubusercontent.com/57889360/209469731-69e65fe1-eb0d-4a39-9405-3aa9a96bcd4d.gif)
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7c37c9aa-a372-41d6-82d2-820d77f4b9f3/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8_2022-12-25_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8_54_39_AdobeExpress_AdobeExpress_%281%29.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221225%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221225T125041Z&X-Amz-Expires=86400&X-Amz-Signature=483c364f211b81b90b44f927f216cf75583493ec489f537c83c23e5969f4c1b8&X-Amz-SignedHeaders=host&x-id=GetObject" width="500" >
 
 </div>
 
