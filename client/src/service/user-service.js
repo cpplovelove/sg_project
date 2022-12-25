@@ -13,11 +13,11 @@ export class UserService {
   }
 
   static async login(userEmail, userPass) {
-    let status;
+    let data;
     await instance.post("/user/login", { userEmail, userPass }).then((res) => {
-      status = res.status;
+      data = res;
     });
-    return status;
+    return data;
   }
 
   static async approve(userEmail, authNumber) {
