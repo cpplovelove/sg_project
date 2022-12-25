@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt'
 
 const UserController = {
   async getUsers(req: any, res: any) {
+    console.log(req.method, req.path)
     try {
       const userList = await UserService.getUserList();
       res.status(200).json(userList);
@@ -10,6 +11,7 @@ const UserController = {
   },
   async join(req: any, res: any) {
     //이미 가입된 유저인 지 확인 필요 & 토큰 발급 필요
+    console.log(req.method, req.path)
     try {
       let { userEmail, userPass, userName } = req.body;
       userPass = await bcrypt.hash(userPass, 10);
@@ -21,6 +23,7 @@ const UserController = {
     } catch (err) { throw err; }
   },
   async login(req: any, res: any) {
+    console.log(req.method, req.path)
     try {
       const { userEmail, userPass } = req.body;
 
@@ -35,11 +38,13 @@ const UserController = {
     } catch (err) { throw err; }
   },
   async logout(req: any, res: any) {
+    console.log(req.method, req.path)
     req.session.destroy();
     res.clearCookie('sid')
     res.send('logout')
   },
   async loginCheck(req: any, res: any) {
+    console.log(req.method, req.path)
     console.log(req.session)
     if (req.session.is_logined) {
       console.log('user exist')
@@ -50,6 +55,7 @@ const UserController = {
     }
   },
   async approve(req: any, res: any) {
+    console.log(req.method, req.path)
     try {
       const { userEmail, authNumber } = req.body;
 
